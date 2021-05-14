@@ -2,7 +2,7 @@
   "name": "snake",
   "version": "1.0.0",
   "description": "",
-  "main": "./docs/_main.js",
+  "main": "./docs/script.js",
   "dependencies": {
     "Snake.js": "^0.0.5",
     "Fruit.js": "^0.0.5",
