@@ -43,18 +43,29 @@ const init = () => {
     gb.draw();
 
     gameOver = false;
+    snakeCollision = false;
+    wallCollision = false;
     iterator = 0;
 }
 
 //FUNCTION THAT REPRESENTS THE MAIN LOOP OF THE GAME
 let growthPossible;
+let snakeCollision;
+let wallCollision;
+let snakeState;
 let xFruit, yFruit;
 let iterator = 0;
 const animate = () => {
     const interval = setInterval(() => {
         if (gameOver == false) {
             growthPossible = false;
-            growthPossible = gb.assimilateSnake(snake.reportCurrentPositions());
+            snakeCollision = false;
+            wallCollision = false;
+
+            snakeState = gb.assimilateSnake(snake.reportCurrentPositions());
+            console.log(snakeState);
+            snakeCollision = snakeState[0];
+            growthPossible = snakeState[1];
             if (growthPossible) snake.grow();
     
             if (iterator%Math.floor(fruit_rate) == 0) {
@@ -69,7 +80,9 @@ const animate = () => {
             }
     
             gb.draw();
-            gameOver = snake.update();        
+            wallCollision = snake.update();
+            
+            if (snakeCollision || wallCollision) gameOver = true;
         } else {
             clearInterval(interval);
             modalElement.style.display = "flex";
