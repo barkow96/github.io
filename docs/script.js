@@ -63,7 +63,6 @@ const animate = () => {
             wallCollision = false;
 
             snakeState = gb.assimilateSnake(snake.reportCurrentPositions());
-            console.log(snakeState);
             snakeCollision = snakeState[0];
             growthPossible = snakeState[1];
             if (growthPossible) snake.grow();
