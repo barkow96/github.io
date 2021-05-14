@@ -1,0 +1,22 @@
+{
+  "name": "snake",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./docs/_main.js",
+  "dependencies": {
+    "Snake.js": "^0.0.5",
+    "Fruit.js": "^0.0.5",
+    "GameBoard.js": "^0.0.5",
+    "Coordinates.js": "^0.0.5"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel ./docs/index.html",
+    "build": "parcel build ./docs/index.html"
+  },
+  "author": "Bartosz Kowal",
+  "license": "ISC"
+}

@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    background-color: grey;
+}
+
+#canvas {
+    margin: auto;
+    margin-top: 50px;
+}
+
+#score {
+    width: 100%;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    
+}
