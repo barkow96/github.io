@@ -85,6 +85,7 @@ export default class GameBoard {
         const y = coords.y;
         const length = x.length;
         let growthPossible = false;
+        let gameOver = false;
 
         if (this.items[x[0]][y[0]] == "S") gameOver = true;
         if (this.items[x[0]][y[0]] == "F") growthPossible = true;
@@ -97,7 +98,7 @@ export default class GameBoard {
         
         for (let i=0; i<length; i++) this.items[x[i]][y[i]] = "S";
 
-        return growthPossible;
+        return [gameOver, growthPossible];
     }
 
     //ADDING FRUIT TO THE GAMEBOARD
